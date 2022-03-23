@@ -8,7 +8,7 @@
         <c:import url="template/navigation.jsp" />
     </div>
 
-    <h2 class="text-center mt-3 p-3">Welcome</h2>
+    <h2 class="text-center mt-3 p-3">Welcome!</h2>
 </div>
 
 <c:import url="template/bs-js.jsp" />
