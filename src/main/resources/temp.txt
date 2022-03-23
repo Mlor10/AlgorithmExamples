@@ -1,0 +1,37 @@
+   /**
+     *  Gets the array list of integers
+     * @return arraylist of integers
+     */
+    public ArrayList<Integer> getArray() {
+        return this.array;
+    }
+
+    /**
+     * Creates an arraylist of numbers from the entry
+     * @param entry user entered string list of numbers
+     */
+    public void createArray(String entry) {
+        ArrayList<Integer>newArray = new ArrayList<Integer>();
+        String[] entryArray = entry.split("\\s");
+        for(String element : entryArray) {
+            newArray.add(Integer.parseInt(element));
+        }
+        this.array = newArray;
+        logger.info(this.array);
+    }
+
+    public ArrayList<Integer> splitArrayFirst(ArrayList<Integer> splitArray) {
+        int halfWayPoint = (splitArray.size() / 2);
+        ArrayList<Integer> arrayA = new ArrayList<Integer>(splitArray.subList(0, halfWayPoint));
+        return arrayA;
+    }
+
+    public ArrayList<Integer> splitArrayLast(ArrayList<Integer> splitArray) {
+        int halfWayPoint = (splitArray.size() / 2);
+        ArrayList<Integer> arrayB = new ArrayList<Integer>(splitArray.subList(halfWayPoint, (splitArray.size() - 1)));
+        return arrayB;
+    }
+
+    public void combineArray(ArrayList<Integer> arrayOne, ArrayList<Integer> arrayTwo) {
+
+    }
