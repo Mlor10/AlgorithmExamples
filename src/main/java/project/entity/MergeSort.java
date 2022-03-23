@@ -107,7 +107,7 @@ public class MergeSort {
         // in the case of odd numbered array lengths such as 7
         int beyondHalfWay = arrayLength - halfWay;
         int[] firstHalf = new int[halfWay];
-        int[] secondHalf = new int[arrayLength - halfWay];
+        int[] secondHalf = new int[beyondHalfWay];
 
         System.arraycopy(enteredArray, 0, firstHalf, 0, halfWay);
         System.arraycopy(enteredArray, halfWay, secondHalf, 0, beyondHalfWay);
@@ -148,6 +148,7 @@ public class MergeSort {
             }
         }
         // adds in the rest of the numbers of the firstHalf and secondHalf arrays to the enteredArray
+        // counter catches up to the length of their halves
         while (i < firstInt) {
             enteredArray[k++] = firstHalf[i++];
         }

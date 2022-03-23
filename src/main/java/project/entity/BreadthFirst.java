@@ -57,11 +57,11 @@ public class BreadthFirst {
      * @param value value to search
      * @param start starting location
      * @param <T> collection of optional locations
-     * @return
+     * @return empty optional container
      */
     public <T>Optional<Location<T>> searchLocation(T value, Location<T> start) {
-        // arraydeque has double the capacity of arraylists
-        // and performs better when removing the first element of the list
+        // arraydeque always have double the capacity for resizing
+        // and performs better than ArrayList when removing the first element of the list
         Queue<Location<T>> queue = new ArrayDeque<>();
         queue.add(start);
 
@@ -74,7 +74,7 @@ public class BreadthFirst {
             addActionList("Visited location with value: " + currentLocation.getValue());
             // if location is new
             if (currentLocation.getValue().equals(value)) {
-                // creates an optional object of the location
+                // ends the queue and returns the current location
                 return Optional.of(currentLocation);
             } else {
                 alreadyVisited.add(currentLocation);
@@ -84,7 +84,7 @@ public class BreadthFirst {
                 queue.removeAll(alreadyVisited);
             }
         }
-        // returns an empty optional value
+        // returns an empty optional value if search value was not found
         return Optional.empty();
     }
 }

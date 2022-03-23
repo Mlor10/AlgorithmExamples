@@ -51,6 +51,7 @@ public class Location<T> {
     public void connectLocation(Location<T> location) {
         if (this == location) throw new IllegalArgumentException("Can't connect to itself");
         this.neighbors.add(location);
+        // allows for an undirected graph
         location.neighbors.add(this);
     }
 }

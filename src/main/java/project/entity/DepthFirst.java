@@ -21,7 +21,7 @@ public class DepthFirst {
      */
     public DepthFirst(){
         actionList = new ArrayList<>();
-        this.adjacentVertices = new HashMap<Integer, List<Integer>>();
+        this.adjacentVertices = new HashMap<>();
     }
 
     /**
